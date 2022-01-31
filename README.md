@@ -12,9 +12,6 @@ Ensure you have Docker installed. (Linux users may also have to install docker c
 
 Windows users will have to install WSL2 (I recommend using the Ubuntu distro). They will also have to ensure [Docker is set up as show](https://imgur.com/a/xcgPMLA)
 
-Clone this repository to whatever directory you wish to work on the project in.
-
-You will likely want to delete `.git` and `git init` a new repository in the project itself.
 
 To start up the system, run the command `docker compose up frontend`. This tells docker compose to set 'up' a service, and we specify the frontend. Since the frontend is set to depend on the backend and the database in the `docker-compose.yaml` file, all 3 services will be built.
 

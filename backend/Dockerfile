@@ -13,9 +13,4 @@ EXPOSE 8000
 
 COPY . /src/
 
-# ENTRYPOINT ["ls"]
-# ENTRYPOINT ["python3", "backend/manage.py"]
-# CMD ["makemigrations", "migrate", "runserver", "0.0.0.0:8000"]
-
 CMD ["backend/start.sh"]
-# CMD ["ls"]
