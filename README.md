@@ -10,7 +10,7 @@ This repository provides a blank application using this stack, so any group can 
 
 Ensure you have Docker installed. (Linux users may also have to install docker compose separately)
 
-Windows users will have to install WSL2 (I recommend using the Ubuntu distro). They will also have to ensure [Docker is set up as show](https://imgur.com/a/xcgPMLA)
+Windows users will have to install WSL2 (I recommend using the Ubuntu distro). They will also have to ensure [Docker is set up as shown](https://imgur.com/a/xcgPMLA)
 
 
 To start up the system, run the command `docker compose up frontend`. This tells docker compose to set 'up' a service, and we specify the frontend. Since the frontend is set to depend on the backend and the database in the `docker-compose.yaml` file, all 3 services will be built.
