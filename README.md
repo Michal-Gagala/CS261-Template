@@ -10,7 +10,7 @@ This repository provides a blank application using this stack, so any group can 
 
 Ensure you have Docker installed. (Linux users may also have to install docker compose separately)
 
-Windows users will have to install WSL2 (I recommend using the Ubuntu distro). They will also have to ensure [Docker is set up as show](https://imgur.com/a/xcgPMLA)
+Windows users will have to install WSL2 (I recommend using the Ubuntu distro). They will also have to ensure [Docker is set up as shown](https://imgur.com/a/xcgPMLA)
 
 Clone this repository to whatever directory you wish to work on the project in.
 
