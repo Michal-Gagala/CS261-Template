@@ -1,0 +1,55 @@
+version: "3.9"
+   
+services:
+  db:
+    image: postgres:14
+    volumes:
+      - "postgres:/var/lib/postgresql/data"
+    user: postgres
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGUSER=postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - dbnetwork
+  backend:
+    build: backend
+    volumes:
+      - .:/src
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - dbnetwork
+    links:
+      - db:db
+    depends_on:
+      - db
+  frontend:
+    restart: always
+    command : npm start
+    container_name: front
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    depends_on:
+      - backend
+    networks:
+      - dbnetwork
+
+networks:
+  dbnetwork:
+    driver: bridge
+
+volumes:
+  postgres:
